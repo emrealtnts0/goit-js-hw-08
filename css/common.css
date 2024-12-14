@@ -1,0 +1,84 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient arka plan rengi */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+header {
+  margin: 40px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #fff; /* Başlık rengini arka planla kontrast yaratması için beyaz yaptım */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.gallery-container {
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.gallery-item {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  transition: box-shadow var(--animation-duration) var(--timing-function), transform var(--animation-duration) var(--timing-function);
+}
+
+.gallery-item:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Hover durumunda daha belirgin gölge */
+  transform: scale(1.05);
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content img {
+  display: block;
+}
+
+.modal-description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: white; /* Beyaz renkte açıklama */
+  background-color: rgba(0, 0, 0, 0.7); /* Hafif karanlık arka plan */
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 90%; /* Açıklamanın genişliğini resimle uyumlu hale getirir */
+  text-align: center; /* Açıklama metnini ortalar */
+}
